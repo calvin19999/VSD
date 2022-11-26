@@ -9,9 +9,15 @@ Contents
 
 Day0
 ----------
-Yosys 
-| 
-.. figure:: picture/yosys.png
- :width: 400px
- :height: 200px
-  :alt: ntg
+| Yosys 
+.. image:: /picture/yosys.png
+    :width: 500
+    
+| OpenSTA
+.. image:: /picture/opensta.png
+    :width: 500
+
+| ngspice
+.. image:: /picture/ngspice.png
+    :width: 500
+  
