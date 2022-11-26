@@ -5,82 +5,134 @@ VSD
 #. Contents
  * `Day0`_
 
-`A cool website`_
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
+as
 
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org.. _A cool website: http://sphinx-doc.org
-.. _A cool website: http://sphinx-doc.org
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
+asd
+asd
+as
+d
+asd
+as
+d
+as
+da
+sd
+as
+das
+d
+as
 
 Day0
 ----------
