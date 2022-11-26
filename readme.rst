@@ -9,6 +9,6 @@ VSD
 
 Day0
 ----------
-.. |Yosys| image:: picture/yosys.jpg
+.. |Yosys| image:: VSD/picture/yosys.jpg
  :width: 400
   :alt: ntg
