@@ -9,6 +9,6 @@ Contents
 
 Day0
 ----------
-.. |Yosys| image:: picture/yosys.png
+.. |Yosys| image:: VSD/picture/yosys.png
  :width: 400
   :alt: ntg
