@@ -3,10 +3,10 @@ VSD
 =======
 
 Contents
---------
+#. Day0
 
 `A cool website`_
 .. _A cool website: http://sphinx-doc.org
 
-day1
-~~~~~~~~~~
+Day0
+----------
