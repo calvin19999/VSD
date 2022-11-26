@@ -10,7 +10,7 @@ Contents
 Day0
 ----------
 Yosys 
-.. figure:: VSD/picture/yosys.png
+.. figure:: picture/yosys.png
  :width: 400px
  :height: 200px
   :alt: ntg
