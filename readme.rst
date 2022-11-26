@@ -3,7 +3,7 @@ VSD
 =======
 
 #. Contents
- * 'Day0'_
+ * `Day0`_
 
 `A cool website`_
 .. _A cool website: http://sphinx-doc.org
