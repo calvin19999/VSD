@@ -1,6 +1,6 @@
 # VSD
 ### Contents
-* [Day0](vsd/day0)<br />
+* [Day0](vsd/day0.md)<br />
 [An Internal Link to a Section Heading](/guides/content/editing-an-existing-page#modifying-front-matter)<br />
 
 ## [Day0](/guides/content/editing-an-existing-page#modifying-front-matter)<br />
