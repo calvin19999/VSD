@@ -18,6 +18,6 @@ Day0
     :width: 500
 
 | ngspice
-.. image:: /picture/ngspice.png
+.. image:: /picture/ngspice.jpg
     :width: 500
   
