@@ -4,8 +4,14 @@ VSD
 
 Contents
  * `Day0`_
+ 
  * `Day1`_
+    * `Labs using iverilog and gtkwave`_
+    * `Labs using Yosys and Sky130 PDKs`_
  * `Day2`_
+    * `Hierarchical vs Flat Synthesis`_
+    * `Synthesis Simulation`_
+    * `Various Flop Coding Styles and optimization`_
  * `Day3`_
 
 
@@ -121,7 +127,7 @@ Asynchronous
     gtkwave tb_dff_asyncres.vcd
     
 .. image:: /picture/day2_synthesis_1.jpg
-    :width: 400
+    :width: 600
     
 Asynchronous set
 
@@ -132,7 +138,7 @@ Asynchronous set
     gtkwave tb_dff_async_set.vcd
     
 .. image:: /picture/day2_synthesis_2.jpg
-    :width: 400
+    :width: 600
     
 Synchronous
 
@@ -143,7 +149,7 @@ Synchronous
     gtkwave tb_dff_syncres.vcd
     
 .. image:: /picture/day2_synthesis_3.jpg
-    :width: 400
+    :width: 600
     
 Various Flop Coding Styles and optimization
 ~~~~~~~~~~~~
