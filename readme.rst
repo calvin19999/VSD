@@ -274,3 +274,77 @@ mult8
     
 Day3
 ----------
+Introduction to Optimization
+~~~~~~~~~~~~~~
+
+| **Combinational logic optimizations**
+| Squeez the logic to get the most optimized design (area & power)
+| Method used: constant propagation (direct optimization), boolean logic optimization
+| Constant propagation example
+
+.. image:: /picture/day3_combination_4.jpg
+    :width: 400
+    
+| Boolean logic example
+
+.. image:: /picture/day3_combination_5.jpg
+    :width: 400
+    
+.. image:: /picture/day3_combination_6.jpg
+    :width: 400
+    
+| **Sequential logic optimizations**
+| Basic: Sequential constant propagation
+| Advance: state optimisation, retiming, sequential logic cloning
+| state optimisation example
+| cloning
+| when the flops are far away, flop a can be doubled to eliminate the delay
+
+.. image:: /picture/day3_combination_7.jpg
+    :width: 400
+    
+| Retiming
+| Retiming is a technique for optimizing sequential circuits. It repositions the registers in a circuit leaving the combinational portion of circuitry untouched. The central objective of retiming is to find a circuit with the minimum number of registers for a specified clock period.
+
+Combinational Logic Optimization
+~~~~~~~~~~~~
+
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/opt_check.v
+    synth -top opt_check
+    opt_clean -purge
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day3_combination_1.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/opt_check2.v
+    synth -top opt_check2
+    opt_clean -purge
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day3_combination_2.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/opt_check3.v
+    synth -top opt_check3
+    opt_clean -purge
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+.. image:: /picture/day3_combination_3.jpg
+    :width: 400
+
+Sequential logic optimizations
+~~~~~~~~~~~~
+
+Sequential optimizations for unused outputs
+~~~~~~~~~~~~
+
