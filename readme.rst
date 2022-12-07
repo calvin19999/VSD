@@ -21,6 +21,11 @@ Contents
     * `Synthesis Simulation`_
     * `Various Flop Coding Styles and optimization`_
  * `Day3`_
+    * `Introduction to Optimization`_
+    * `Combinational Logic Optimization`_
+    * `Sequential logic optimizations`_
+    * `Sequential optimizations for unused outputs`_
+
 
 
 
@@ -345,6 +350,92 @@ Combinational Logic Optimization
 Sequential logic optimizations
 ~~~~~~~~~~~~
 
+| The output will go 1 when the reset is 0 as the output will go 0 when reset is 1.
+.. code-block:: console
+
+    iverilog dff_const1.v tb_dff_const1.v
+    ./a.out
+    gtkwave tb_dff_const1.vcd
+
+.. image:: /picture/day3_sequential_1.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/dff_const1.v
+    synth -top dff_const1
+    dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day3_sequential_3.jpg
+    :width: 400
+    
+| The output will always 1 as the output will go 1 when the reset is 1.
+.. code-block:: console
+
+    iverilog dff_const2.v tb_dff_const2.v
+    ./a.out
+    gtkwave tb_dff_const2.vcd
+
+.. image:: /picture/day3_sequential_2.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/dff_const2.v
+    synth -top dff_const2
+    dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day3_sequential_4.jpg
+    :width: 400
+    
+| dff_const3
+.. code-block:: console
+
+    iverilog dff_const3.v tb_dff_const3.v
+    ./a.out
+    gtkwave tb_dff_const3.vcd
+
+.. image:: /picture/day3_sequential_5.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/dff_const3.v
+    synth -top dff_const3
+    dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day3_sequential_6.jpg
+    :width: 400
+    
 Sequential optimizations for unused outputs
 ~~~~~~~~~~~~
 
+| q is affected just by count[0] so the circuit will be simple.
+
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/counter_opt.v
+    synth -top counter_opt
+    dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day3_sequential_10.jpg
+    :width: 400
+.. image:: /picture/day3_sequential_7.jpg
+    :width: 400
+    
+| when the counter is replace to 3 bit the circuit will contain 3 flop
+
+.. image:: /picture/day3_sequential_9.jpg
+    :width: 400
+.. image:: /picture/day3_sequential_8.jpg
+    :width: 400
+    
+    
