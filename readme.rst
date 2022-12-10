@@ -27,7 +27,8 @@ Contents
     * `Sequential optimizations for unused outputs`_
 * `Day4`_
     * `GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements`_
-    * `GLS and Synthesis-Simulation Mismatch`_
+    * `GLS`_
+    * `Synthesis-Simulation Mismatch`_
     * `Synth-sim mismatch for blocking statement`_
 * `Day5`_
     * `If Case constructs`_
@@ -450,12 +451,114 @@ Day4
 ~~~~~~~~~
 GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
 ------------
-GLS and Synthesis-Simulation Mismatch
+
+| GLS(Gate Level Simulation)
+* Verify the logic correctness of design after synthesis
+* Ensure timing of the design is met
+
+| GLS using iverilog
+.. image:: /picture/day4_GLS_1.jpg
+    :width: 400
+    
+| Synthesis-Simulation mismatch
+* Missing sensitivity list
+* Blocking vs non-blocking Assignment
+* Non standard verilog coding
+
+| **Blocking/Non-blocking statements**
+| Blocking (=)
+* Execute statement in order
+| Non blocking (<=)
+* Execute in parallel
+
+GLS
 ------------
 
+| if sel is True then output will be i1 else i0
+.. image:: /picture/day4_GLS_3.jpg
+    :width: 400
+.. image:: /picture/day4_GLS_2.jpg
+    :width: 400
+
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/ternary_operator_mux.v
+    synth -top ternary_operator_mux
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day4_GLS_4.jpg
+    :width: 400
+    
+| To do GLS involve iverilog
+.. code-block:: console
+
+   iverilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+   ./a.out
+   gtkwave tb_ternary_operator_mux.vcd
+   
+.. image:: /picture/day4_GLS_5.jpg
+    :width: 400
+    
+Synthesis-Simulation Mismatch
+-----------------
+| when the sel is active high there is no change on the output when i1 is change in the path of duration, this is due to the  missing sensitivity list
+
+.. image:: /picture/day4_GLS_6.jpg
+    :width: 400
+.. image:: /picture/day4_GLS_7.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/bad_mux.v
+    synth -top bad_mux
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    write_verilog -noattr bad_mux_net.v
+    
+    verilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+    ./a.out
+    gtkwave tb_ternary_operator_mux.vcd
+.. image:: /picture/day4_GLS_9.jpg
+    :width: 400
+    
 Synth-sim mismatch for blocking statement
 ------------
 
+| Supposely when A is high X will be high and D will high. However, due to the blocking statement and the according of the code there is mistake happened which the code will execute first line which is **d = x & c** first only execute **x = a | b**. This is happen due to the x is evaluate the previous condition.
+
+.. code-block:: console
+
+    iverilog blocking_caveat.v tb_blocking_caveat.v
+    ./a.out
+    gtkwave tb_blocking_caveat.vcd
+    
+.. image:: /picture/day4_caveat_1.jpg
+    :width: 400
+.. image:: /picture/day4_caveat_2.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/blocking_caveat.v
+    synth -top blocking_caveat
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    write_verilog -noattr blocking_caveat_net.v
+    
+.. image:: /picture/day4_caveat_3.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    verilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+    ./a.out
+    gtkwave tb_blocking_caveat.vcd
+
+.. image:: /picture/day4_caveat_4.jpg
+    :width: 400
+    
 Day5
 ~~~~~~~~~~
 
