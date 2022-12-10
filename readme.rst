@@ -695,6 +695,7 @@ For loop and for generate
 * Instantiate hardware multiple times
 
 **For**
+
 .. code-block:: console
 
     iverilog mux_generate.v tb_mux_generate.v
@@ -707,6 +708,7 @@ For loop and for generate
     :width: 400
     
 | when the sel is changing from 0 to 7 the output will be go from o1 to o7
+
 .. code-block:: console
 
     iverilog demux_generate.v tb_demux_generate.v
@@ -719,6 +721,7 @@ For loop and for generate
     :width: 400
 
 **For Generate**
+
 .. code-block:: console
 
     iverilog rca.v fa.v tb_rca.v
@@ -730,3 +733,19 @@ For loop and for generate
 .. image:: /picture/day5_for_7.jpg
     :width: 400
 
+GLS
+
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/rca.v verilog_file/fa.v
+    synth -top rca
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    write_verilog verilog_file/rca_net.v
+    
+    iverilog ../my_lib/verilog_model/primitives.v  ../my_lib/verilog_model/sky130_fd_sc_hd.v rca_net.v tb_rca.v
+    ./a.out
+    gtkwave tb_rca.vcd
+    
+.. image:: /picture/day5_for_8.jpg
+    :width: 400
