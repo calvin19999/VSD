@@ -31,11 +31,9 @@ Contents
     * `Synthesis-Simulation Mismatch`_
     * `Synth-sim mismatch for blocking statement`_
 * `Day5`_
-    * `If Case constructs`_
     * `Incomplete If Case`_
     * `Incomplete overlapping Case`_
     * `For loop and for generate`_
-    * `"for loop" and "for generate"`_
 
 Day0
 ~~~~~~~~
@@ -561,18 +559,174 @@ Synth-sim mismatch for blocking statement
     
 Day5
 ~~~~~~~~~~
-
-If Case constructs
-------------
-
 Incomplete If Case
 ------------
+| The RTL design show that if i0 is active high only that the output will equal to i1. There is no else statement in this rtl coding. When i0 go from high to low, the output will maintain the previous until next active high i0.
 
+.. code-block:: console
+
+    iverilog incomp_if.v tb_incomp_if.v
+    ./a.out
+    gtkwave tb_incomp_if.vcd
+    
+.. image:: /picture/day5_if_1.jpg
+    :width: 400
+.. image:: /picture/day5_if_2.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/incomp_if.v
+    synth -top incomp_if
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+.. image:: /picture/day5_if_3.jpg
+    :width: 400
+    
+| There is missing else statement. when i0 is high, the output is i1, when i2 is high the output is i3. When i0 and i2 are low, the output will be constant.
+
+.. code-block:: console
+
+    iverilog incomp_if2.v tb_incomp_if2.v
+    ./a.out
+    gtkwave tb_incomp_if2.vcd
+    
+.. image:: /picture/day5_if_4.jpg
+    :width: 400
+.. image:: /picture/day5_if_5.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/incomp_if2.v
+    synth -top incomp_if2
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day5_if_6.jpg
+    :width: 400
+    
+    
 Incomplete overlapping Case
 ------------
+| **incomplete case**
+| The case statement do not have a default statement. When sel=0 y=i0, when sel=1 y=i1. However when the sel=2 or 3, the output will be constant.
+.. code-block:: console
+
+    iverilog incomp_case.v tb_incomp_case.v
+    ./a.out
+    gtkwave tb_incomp_case.vcd
+    
+.. image:: /picture/day5_case_1.jpg
+    :width: 400
+.. image:: /picture/day5_case_2.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/incomp_case.v
+    synth -top incomp_case
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day5_case_3.jpg
+    :width: 400
+    
+| **complete case**
+.. code-block:: console
+
+    iverilog comp_case.v tb_comp_case.v
+    ./a.out
+    gtkwave tb_comp_case.vcd
+    
+.. image:: /picture/day5_case_4.jpg
+    :width: 400
+.. image:: /picture/day5_case_5.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/comp_case.v
+    synth -top comp_case
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day5_case_6.jpg
+    :width: 400
+
+| **Partial case**
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/partial_case_assign.v
+    synth -top partial_case_assign
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day5_case_7.jpg
+    :width: 400
+.. image:: /picture/day5_case_8.jpg
+    :width: 400
+
+| **Bad case**
+| when sel = 2 or 3 the case "2'b1? will be execute
+.. image:: /picture/day5_case_9.jpg
+    :width: 400
+.. image:: /picture/day5_case_10.jpg
+    :width: 400
+    
+.. code-block:: console
+
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog verilog_file/bad_case_assign.v
+    synth -top bad_case
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    
+.. image:: /picture/day5_case_11.jpg
+    :width: 400
 
 For loop and for generate
 ------------
+| For loop
+* Use inside always block
+* Evaluating expression
+| Generate for loop
+* Use outside always block
+* Instantiate hardware multiple times
 
-"for loop" and "for generate"
-------------  
+**For**
+.. code-block:: console
+
+    iverilog mux_generate.v tb_mux_generate.v
+    ./a.out
+    gtkwave tb_mux_generate.vcd
+    
+.. image:: /picture/day5_for_1.jpg
+    :width: 400
+.. image:: /picture/day5_for_2.jpg
+    :width: 400
+    
+| when the sel is changing from 0 to 7 the output will be go from o1 to o7
+.. code-block:: console
+
+    iverilog demux_generate.v tb_demux_generate.v
+    ./a.out
+    gtkwave tb_demux_generate.vcd
+    
+.. image:: /picture/day5_for_4.jpg
+    :width: 400
+.. image:: /picture/day5_for_5.jpg
+    :width: 400
+
+**For Generate**
+.. code-block:: console
+
+    iverilog rca.v fa.v tb_rca.v
+    ./a.out
+    gtkwave tb_rca.vcd
+    
+.. image:: /picture/day5_for_6.jpg
+    :width: 400
+.. image:: /picture/day5_for_7.jpg
+    :width: 400
+
