@@ -5,32 +5,32 @@ VSD
 Contents
 ~~~~~~~~~~~~~
 
-* `Day0`_
+`Day0`_
     * `Yosys Installation`_
     * `OpenSTA Installation`_
     * `Ngspice Installation`_
     * `Iverilog Installation`_
     * `Gtkwave Installation`_
-* `Day1`_
+`Day1`_
     * `Introduction to iverilog design testbench`_
     * `Labs using iverilog and gtkwave`_
     * `Labs using Yosys and Sky130 PDKs`_
-* `Day2`_
+`Day2`_
     * `Understanding .lib`_
     * `Hierarchical vs Flat Synthesis`_
     * `Synthesis Simulation`_
     * `Various Flop Coding Styles and optimization`_
-* `Day3`_
+`Day3`_
     * `Introduction to Optimization`_
     * `Combinational Logic Optimization`_
     * `Sequential logic optimizations`_
     * `Sequential optimizations for unused outputs`_
-* `Day4`_
+`Day4`_
     * `GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements`_
     * `GLS`_
     * `Synthesis-Simulation Mismatch`_
     * `Synth-sim mismatch for blocking statement`_
-* `Day5`_
+`Day5`_
     * `Incomplete If Case`_
     * `Incomplete overlapping Case`_
     * `For loop and for generate`_
