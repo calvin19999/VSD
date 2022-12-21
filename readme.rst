@@ -878,6 +878,4 @@ negative unate
 non-unate
  * input 0 => 1
  * output 0 => 1 or 1 => 0
- * input 
- * - 
 
