@@ -34,8 +34,14 @@ Contents
     * `Incomplete If Case`_
     * `Incomplete overlapping Case`_
     * `For loop and for generate`_
+`Day7`_
+    * `Introduction to STA`_
+    * `Timing Arc`_
+    * `Constraint`_
+    * `Sky130 .lib`_
+`Day8`_
 
-Day0
+Day0 
 ~~~~~~~~
 
 Yosys Installation
@@ -749,3 +755,129 @@ GLS
     
 .. image:: /picture/day5_for_8.jpg
     :width: 400
+    
+Day7
+~~~~~~~~
+    
+Introduction to STA
+------------
+    
+.. role:: raw-html(raw)
+   :format: html
+
+Max delay = :raw-html:`<strong>T<sub>CLK` > :raw-html:`<strong>T<sub>CQ_A` + :raw-html:`<strong>T<sub>COMBI` + :raw-html:`<strong>T<sub>SETUP_B` 
+Min delay = :raw-html:`<strong>T<sub>HOLD_B` < :raw-html:`<strong>T<sub>CQ_A` + :raw-html:`<strong>T<sub>COMBI` 
+
+| **Delay**
+| Delay of a cell is function of input transition.
+| fast current => less delay 
+| slow current => more delay
+| Delay of a cell is function of output load.
+| long length net => capacitance large => more delay 
+| *Delay of gate = function of input transition and output load* 
+
+Timing Arc
+------------
+| **Combinational Cell**
+| Delay from all input pin to all output pin
+| There is delay from i0 to y, i1 to y and sel to y
+.. image:: /picture/day7_timing_arc_1.jpg
+    :width: 400
+
+| **Sequential Cell**
+| Delay information from input pin to output pin
+| Delay from clock to Q, D to Q
+
+
+.. list-table:: Sequential Cell Timing Arc
+   :header-rows: 1
+
+   * - Device
+     - CLK to Q
+     - D to Q
+     - Setup
+     - Hold
+   * - Posedge DFF
+     - from posedge clk
+     - Na for DFF
+     - to posedge clk
+     - from posedge clk
+   * - Negedge DFF
+     - from negedge clk
+     - Na for DFF
+     - to negedge clk
+     - from negedge clk
+   * - Poslevel Dlatch
+     - from posedge clk
+     - from D to Q when clk is high
+     - to negedge clk
+     - from negedge clk
+   * - Neglevel Dlatch
+     - from negedge clk
+     - from D to Q when clk is low
+     - to posedge clk
+     - from posedge clk
+     
+Constraint
+`````````````
+| **Timing Path**
+start
+ * input port
+ * clk pins of register
+end
+ * output port
+ * D pin of DFF / Dlatch
+.. image:: /picture/day7_timing_path_1.jpg
+    :width: 400
+    
+.. role:: raw-html(raw)
+   :format: html
+
+| finding critical path using formula :raw-html:`<strong>T<sub>CLK` > :raw-html:`<strong>T<sub>CQ` + :raw-html:`<strong>T<sub>COMBI` + :raw-html:`<strong>T<sub>SETUP` 
+| :raw-html:`<strong>T<sub>CQ` + :raw-html:`<strong>T<sub>COMBI` + :raw-html:`<strong>T<sub>SETUP` = 0.5 + 1.2 + 0.5 =2.2ns 
+| :raw-html:`<strong>T<sub>CQ` + :raw-html:`<strong>T<sub>COMBI` + :raw-html:`<strong>T<sub>SETUP` = 0.5 + 0.7 + 0.5 =1.7ns 
+| 2.2ns is critical as it takes longest time.
+| for finding frequency, using formula f<1/:raw-html:`<strong>T<sub>CLK`
+
+constraint timing path
+ * register to register - constraint by clock
+ * register to output - constraint by output external delay and clock period
+ * input to register - constraint by input external delay and clock period
+
+
+Sky130 .lib
+`````````````
+.. image:: /picture/day7_lib_1.jpg
+    :width: 400
+    
+| In the .lib file we could able to see on the unit for power,resistance, current, time, capacitance.
+.. image:: /picture/day7_lib_2.jpg
+    :width: 400
+    
+| Comparing cell sky130_fd_sc_hd_and2_2 and sky130_fd_sc_hd_and2_0
+| 0 will have smaller transistor however 2 will have larger transistor
+| as the transistor is larger it need more area, more power leakage. The delay for 2 will be lesser 
+| In here we can see either the cell have clock pin or not and each pin will be named.
+
+.. image:: /picture/day7_lib_3.jpg
+    :width: 400
+    
+| index_1 = capacitance
+| index_2 = transition
+| 
+positive unate
+ * input 0 => 1
+ * output remain 0 or 0 => 1
+ * never happen input 0 => 1 make output 1 => 0
+ * when input rise output will remain same or rise, output will not fall when input rise
+negative unate
+ * input 0 => 1
+ * output remain 0 or 1 => 0
+ * never happen input 0 => 1 make output 0 => 1
+ * when input rise output will remain same or fall, output will not rise when input rise
+non-unate
+ * input 0 => 1
+ * output 0 => 1 or 1 => 0
+ * input 
+ * - 
+
