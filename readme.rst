@@ -40,6 +40,10 @@ Contents
     * `Constraint`_
     * `Sky130 .lib`_
 `Day8`_
+    * `Introduction to STA`_
+    * `Timing Arc`_
+    * `Constraint`_
+    * `Sky130 .lib`_
 
 Day0 
 ~~~~~~~~
@@ -878,4 +882,30 @@ negative unate
 non-unate
  * input 0 => 1
  * output 0 => 1 or 1 => 0
+ 
+Day8
+~~~~~~~~~~~~~~~
 
+Clock Tree Modelling
+--------------
+
+**Clock Generation**
+ * Oscillator
+ * PLL (phase-locked loop)
+ * External Clock Source
+ * Inherent variations in the clock period due to stochastic effect
+ 
+jitter
+.. image:: /picture/day8_ctm_1.jpg
+    :width: 400
+
+Model the clock
+ * period
+ * source latency - time taken by the clock source to generate clock
+ * clock network latency - time taken by clock distribution network
+ * clock skew - clock path delay mismatches which causes difference in the arrival of clock
+      * CTS will balance the clock, skew cannot reduce to 0
+ * jitter - stochastic variation in the arrival of the clock edge
+      * duty cycle jitter
+      * period jitter
+ * collectively clock skew, jitter = clock uncertainty
