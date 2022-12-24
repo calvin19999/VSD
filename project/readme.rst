@@ -69,3 +69,14 @@ post-Synthesis
     iverilog lib/primitives.v lib/sky130_fd_sc_hd.v netlist/netlist_iiitb_r2_4bit_bm.v srv/iiitb_r2_4bit_bm_tb.v 
     ./a.out
     gtkwave design.vcd
+
+.. image:: /project/picture/8.jpg
+    :width: 500
+    
+.. image:: /project/picture/9.jpg
+    :width: 500
+    
+error
+
+.. image:: /project/picture/99.jpg
+    :width: 500
