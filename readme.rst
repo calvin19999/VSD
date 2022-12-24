@@ -42,8 +42,6 @@ Contents
 `Day8`_
     * `Clock Tree Modelling`_
     * `I/O Constraint`_
-    * `Constraint`_
-    * `Sky130 .lib`_
 
 Day0 
 ~~~~~~~~
