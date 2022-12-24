@@ -40,8 +40,8 @@ Contents
     * `Constraint`_
     * `Sky130 .lib`_
 `Day8`_
-    * `Introduction to STA`_
-    * `Timing Arc`_
+    * `Clock Tree Modelling`_
+    * `I/O Constraint`_
     * `Constraint`_
     * `Sky130 .lib`_
 
@@ -909,3 +909,71 @@ Model the clock
       * duty cycle jitter
       * period jitter
  * collectively clock skew, jitter = clock uncertainty
+ 
+I/O Constraint
+--------------
+
+.. code-block:: console
+
+    get_ports clk
+    get_ports *clk*                                   # return collection of name contain clk
+    get_port *                                        # get all port in the design
+    get_ports * -filter :direction ==in"              # list all input port
+    get_ports * -filter "direction == out"            # list all output port
+    
+    get_clocks *                                      # get all clock in the design
+    get_clock *clk*                                   # get all clock which name contain clk
+    get_clocks * -filter "period > 10"                # list all clk period that greater than 10ns
+    get_attribute[get_clocks my_clk] period
+    get_attribute[get_clocks my_clk] is_generated     # check either is generated clock or not
+    report_clock my_clk                               # report detail of clock
+    
+    get_cells * -hier                                 # get all the cell in the design (physical and hierarchical)
+    
+    create_clock -name -my_clk -period 5 [get_ports clk] #create clock
+    
+Bring practicalities to clock network
+
+.. code-block:: console
+
+    create_clock -name -my_clk -period 5 [get_ports clk]
+    set_clock_latency 3 my_clk [get_ports clk]             # clock delay
+    set_clock_uncertainty 0.5 my_clk                       # (skew + jitter on pre cts, jitter on post cts)
+    
+create_clock -name -my_clk -period 5 [get_ports clk]
+ .. image:: /picture/day8_ctm_2.jpg
+    :width: 400
+    
+create_clock -name -my_clk -period 5 [get_ports clk] -wave {5 10}
+ .. image:: /picture/day8_ctm_3.jpg
+    :width: 400
+    
+Input delay and transition constraint
+
+.. code-block:: console
+
+    set_input_delay -max 3 -clock [get_clocks my_clk][get_ports IN_*]   # including port IN_A and IN_B
+    set_input_delay -min 0.5 -clock [get_clocks my_clk][get_ports IN_*]
+    set_input_transition -max 1.5 [get_ports IN_*]
+    set_input_transition -min 0.75 [get_ports IN_*]
+    
+Output Constraint
+
+.. code-block:: console
+
+    set_output_delay -max 3 -clock [get_clocks my_clk][get_ports OUT_Y]
+    set_output_delay -min 0.5 -clock [get_clocks my_clk][get_ports OUT_Y]
+    set_output_load -max 80 [get_ports OUT_Y]
+    set_output_load -min 20 [get_ports OUT_Y]
+    
+Generated clock
+ .. image:: /picture/day8_ctm_4.jpg
+    :width: 400
+    
+| always created with master clock
+| -source and -master will show the respected port source of the clock
+.. code-block:: console
+
+    create_generated_clock -name -my_gen_clk -master [get_clocks my_clk] -source [get_ports clk] -div 1[get_ports out_clk]
+    
+set_input_delay -max 3 -clock my_clk[get_ports IN_A]
