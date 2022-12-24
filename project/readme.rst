@@ -70,13 +70,24 @@ post-Synthesis
     ./a.out
     gtkwave design.vcd
 
+.. image:: /project/picture/10.jpg
+    :width: 500
+    
 .. image:: /project/picture/8.jpg
     :width: 500
     
 .. image:: /project/picture/9.jpg
     :width: 500
     
+GLS
+~~~~~~~~~~~~~
 error
 
 .. image:: /project/picture/99.jpg
     :width: 500
+    
+if without dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib  it able to work.
+
+.. image:: /project/picture/11.jpg
+    :width: 500
+
