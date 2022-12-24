@@ -58,4 +58,14 @@ post-Synthesis
 
 .. code-block:: console
 
-    iverilog iiitb_r2_4bit_bm.v iiitb_r2_4bit_bm_tb.v
+    read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    read_verilog srv/iiitb_r2_4bit_bm.v 
+    hierarchy -check -top iiitb_r2_4bit_bm 
+    synth
+    dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    write_verilog -noattr netlist/netlist_iiitb_r2_4bit_bm.v
+
+    iverilog lib/primitives.v lib/sky130_fd_sc_hd.v netlist/netlist_iiitb_r2_4bit_bm.v srv/iiitb_r2_4bit_bm_tb.v 
+    ./a.out
+    gtkwave design.vcd
