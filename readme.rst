@@ -894,6 +894,7 @@ Clock Tree Modelling
  * Inherent variations in the clock period due to stochastic effect
  
 jitter
+
 .. image:: /picture/day8_ctm_1.jpg
     :width: 400
 
