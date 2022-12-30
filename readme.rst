@@ -45,6 +45,7 @@ Contents
 `Day10`_
     * `Introduction to STA and importance of MOSFETs in STA/EDA`_
     * `SPICE`_
+    * `CMOS Transfer Characteristic`_
    
     
 Day0 
@@ -1004,8 +1005,24 @@ the corner file in cells folder will showing all the related value of W and L, i
  .. image:: /picture/day10_mosfet_2.jpg
     :width: 400
     
-At No.1 , it can be change to ss ff respective to our need
-At No.2 , XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
- Vdd = drain , n1 = gain , 0 = source , 0 = bulk
+| At No.1 , it can be change to ss ff respective to our need
+| At No.2 , XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
+| Vdd = drain , n1 = gain , 0 = source , 0 = bulk
+ 
  .. image:: /picture/day10_mosfet_3.jpg
     :width: 400
+    
+CMOS Transfer Characteristic 
+------------
+
+Switch
+   * transistor = switch
+   * off when |Vgs| < |Vt|
+   * on when |Vgs| > |Vt|
+   
+ .. image:: /picture/day10_mosfet_4.jpg
+    :width: 400
+
+ .. image:: /picture/day10_mosfet_5.jpg
+    :width: 400
+    
