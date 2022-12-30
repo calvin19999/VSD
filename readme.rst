@@ -1001,7 +1001,9 @@ Introduction to STA and importance of MOSFETs in STA/EDA
 
 SPICE
 ------------
-the corner file in cells folder will showing all the related value of W and L, in our design we need to follow the value in this corner file.
+
+| the corner file in cells folder will showing all the related value of W and L, in our design we need to follow the value in this corner file.
+
  .. image:: /picture/day10_mosfet_2.jpg
     :width: 400
     
