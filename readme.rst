@@ -42,7 +42,12 @@ Contents
 `Day8`_
     * `Clock Tree Modelling`_
     * `I/O Constraint`_
-
+`Day10`_
+    * `Introduction to STA and importance of MOSFETs in STA/EDA`_
+    * `SPICE`_
+    * `Constraint`_
+    * `Sky130 .lib`_
+    
 Day0 
 ~~~~~~~~
 
@@ -976,3 +981,23 @@ Generated clock
     create_generated_clock -name -my_gen_clk -master [get_clocks my_clk] -source [get_ports clk] -div 1[get_ports out_clk]
     
 set_input_delay -max 3 -clock my_clk[get_ports IN_A]
+
+Day10 
+~~~~~~~~~~~
+
+Introduction to STA and importance of MOSFETs in STA/EDA
+------------------------
+
+ .. image:: /picture/day10_mosfet_1.jpg
+    :width: 600
+
+.. role:: raw-html(raw)
+   :format: html
+
+| :raw-html:`<strong>V<sub>GS` =  is the voltage at which the mosfet channel begins to conduct
+| :raw-html:`<strong>V<sub>DS` = represents MOSFET absolute maximum voltage between Drain and Source
+| :raw-html:`<strong>V<sub>TH` =  threshold voltage where appears when the specified current flows between source and drain.
+
+
+SPICE
+------------
