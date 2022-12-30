@@ -44,6 +44,7 @@ Contents
     * `I/O Constraint`_
 `Day10`_
     * `Introduction to STA and importance of MOSFETs in STA/EDA`_
+    * `SPICE`_
    
     
 Day0 
@@ -999,3 +1000,12 @@ Introduction to STA and importance of MOSFETs in STA/EDA
 
 SPICE
 ------------
+the corner file in cells folder will showing all the related value of W and L, in our design we need to follow the value in this corner file.
+ .. image:: /picture/day10_mosfet_2.jpg
+    :width: 400
+    
+At No.1 , it can be change to ss ff respective to our need
+At No.2 , XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
+ Vdd = drain , n1 = gain , 0 = source , 0 = bulk
+ .. image:: /picture/day10_mosfet_3.jpg
+    :width: 400
