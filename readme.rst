@@ -44,9 +44,7 @@ Contents
     * `I/O Constraint`_
 `Day10`_
     * `Introduction to STA and importance of MOSFETs in STA/EDA`_
-    * `SPICE`_
-    * `Constraint`_
-    * `Sky130 .lib`_
+   
     
 Day0 
 ~~~~~~~~
