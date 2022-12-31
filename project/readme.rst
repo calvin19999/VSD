@@ -61,10 +61,15 @@ post-Synthesis
     read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
     read_verilog srv/iiitb_r2_4bit_bm.v 
     hierarchy -check -top iiitb_r2_4bit_bm 
-    synth
+    tribuf
+    synth -top iiitb_r2_4bit_bm 
+    flatten
+    share
+    opt
+    simplemap
     dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
-    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-    write_verilog -noattr netlist/netlist_iiitb_r2_4bit_bm.v
+    abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+    write_verilog -noattr Netlists/netlist_iiitb_r2_4bit_bmdff.v
 
     iverilog lib/primitives.v lib/sky130_fd_sc_hd.v netlist/netlist_iiitb_r2_4bit_bm.v srv/iiitb_r2_4bit_bm_tb.v 
     ./a.out
@@ -81,13 +86,8 @@ post-Synthesis
     
 GLS
 ~~~~~~~~~~~~~
-error
-
-.. image:: /project/picture/99.jpg
+Compare post and pre synthesize, the output are same
+.. image:: /project/picture/12.jpg
     :width: 500
     
-if without dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib  it able to work.
-
-.. image:: /project/picture/11.jpg
-    :width: 500
 
