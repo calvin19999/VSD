@@ -76,19 +76,19 @@ post-Synthesis
     gtkwave design.vcd
 
 .. image:: /project/picture/10.jpg
-    :width: 500
+    :width: 400
     
 .. image:: /project/picture/8.jpg
-    :width: 500
+    :width: 400
     
 .. image:: /project/picture/9.jpg
-    :width: 500
+    :width: 400
     
 GLS
 ~~~~~~~~~~~~~
 Compare post and pre synthesize, the output are same
 
 .. image:: /project/picture/12.jpg
-    :width: 500
+    :width: 700
     
 
