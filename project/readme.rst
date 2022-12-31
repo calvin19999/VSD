@@ -87,6 +87,7 @@ post-Synthesis
 GLS
 ~~~~~~~~~~~~~
 Compare post and pre synthesize, the output are same
+
 .. image:: /project/picture/12.jpg
     :width: 500
     
