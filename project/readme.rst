@@ -87,7 +87,8 @@ post-Synthesis
 GLS
 ~~~~~~~~~~~~~
 
-On the behavioral of dfxtp in the sky130_fd_sc_hd.v adding this 2 line will solving the gls problem that did not launch gls correctly
+| **fix sky130_fd_sc_hd.v**
+| On the behavioral of dfxtp in the sky130_fd_sc_hd.v adding this 2 line will solving the gls problem that did not launch gls correctly
 
 .. image:: /project/picture/13.jpg
     :width: 700
