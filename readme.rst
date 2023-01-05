@@ -42,11 +42,14 @@ Contents
 `Day8`_
     * `Clock Tree Modelling`_
     * `I/O Constraint`_
-`Day10`_
+`Day10-12`_
     * `Introduction to STA and importance of MOSFETs in STA/EDA`_
     * `SPICE`_
     * `CMOS Transfer Characteristic`_
-   
+`Day13`_
+    * `CMOS Switching Threshold and Dynamic Simulation`_
+    * `SPICE`_
+    * `CMOS Transfer Characteristic`_
     
 Day0 
 ~~~~~~~~
@@ -982,7 +985,7 @@ Generated clock
     
 set_input_delay -max 3 -clock my_clk[get_ports IN_A]
 
-Day10 
+Day10-12 
 ~~~~~~~~~~~
 
 Introduction to STA and importance of MOSFETs in STA/EDA
@@ -1028,3 +1031,9 @@ Switch
  .. image:: /picture/day10_mosfet_5.jpg
     :width: 400
     
+    
+Day13
+~~~~~~~~~~~~~~~
+    
+CMOS Switching Threshold and Dynamic Simulation
+------------
