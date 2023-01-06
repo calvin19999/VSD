@@ -48,7 +48,7 @@ Contents
     * `CMOS Transfer Characteristic`_
 `Day13`_
     * `CMOS Switching Threshold and Dynamic Simulation`_
-    * `SPICE`_
+    * `CMOS Noise Margin Robustness evaluation`_
     * `CMOS Transfer Characteristic`_
     
 Day0 
@@ -1012,7 +1012,7 @@ SPICE
     
 | At No.1 , it can be change to ss ff respective to our need
 | At No.2 , XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
-| Vdd = drain , n1 = gain , 0 = source , 0 = bulk
+| Vdd = drain , n1 = gate , 0 = source , 0 = bulk
  
  .. image:: /picture/day10_mosfet_3.jpg
     :width: 400
@@ -1032,8 +1032,49 @@ Switch
     :width: 400
     
     
-Day13
+Day13-15
 ~~~~~~~~~~~~~~~
     
 CMOS Switching Threshold and Dynamic Simulation
 ------------
+
+| spice deck
+* component connectivity
+* input / output port
+* component value
+* indentify 'nodes'
+* Name the 'nodes'
+
+ .. image:: /picture/day13_cmos_1.jpg
+    :width: 400
+    
+
+ .. image:: /picture/day13_cmos_2.jpg
+    :width: 400
+    
+Example of writing spice deck
+
+.. code-block:: console
+
+    M1 out in vdd vdd pmos W=0.375u L=0.25u
+    M2 out in 0 0 nmox W=0.35=75u L=0.25u
+    
+    cload out 0 10f
+    
+    Vdd vdd 0 2.5
+    Vin in 0 2.5
+    
+    #simulation cmd
+    .op 
+    .dc Vin 0 2.5 0.05
+    
+    #include model file
+    .LIB "tsmc_025um_model.mod" CMOS_MODELS
+    .end
+    
+CMOS Noise Margin Robustness evaluation
+------------
+
+noise margin
+
+
