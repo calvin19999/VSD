@@ -48,8 +48,8 @@ Contents
     * `CMOS Transfer Characteristic`_
 `Day13`_
     * `CMOS Switching Threshold and Dynamic Simulation`_
-    * `CMOS Noise Margin Robustness evaluation`_
-    * `CMOS Transfer Characteristic`_
+    * `CMOS inverter`_
+
     
 Day0 
 ~~~~~~~~
@@ -1072,9 +1072,24 @@ Example of writing spice deck
     .LIB "tsmc_025um_model.mod" CMOS_MODELS
     .end
     
-CMOS Noise Margin Robustness evaluation
+
+CMOS inverter
 ------------
 
-noise margin
+| etching process
+* affect on delay
 
+single inverter
 
+ .. image:: /picture/day13_cmos_3.jpg
+    :width: 400
+
+| variation of ideal and actual
+
+ .. image:: /picture/day13_cmos_4.jpg
+    :width: 400
+    
+| weak pmos = high resistance pmos
+| stong pmos = less resistance pmos
+ .. image:: /picture/day13_cmos_5.jpg
+    :width: 400
