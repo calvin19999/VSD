@@ -1091,5 +1091,6 @@ single inverter
     
 | weak pmos = high resistance pmos
 | stong pmos = less resistance pmos
+
  .. image:: /picture/day13_cmos_5.jpg
     :width: 400
