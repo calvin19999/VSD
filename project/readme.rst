@@ -1,6 +1,18 @@
 Radix-2 4-Bit Booth's Multiplier
 ==============
 
+Contents
+~~~~~~~~~~~~~
+
+`Introduction`_
+`Block Diagram & Working Principle`_
+`Pre-Synthesis`_
+`post-Synthesis`_
+`GLS`_
+`STA`_
+
+
+
 Introduction
 --------------
 Booth's Multiplier is base on Booth's Multiplication algorithm. Booth's multiplication algorithm is a multiplication algorithm that multiplies two signed binary numbers in two's complement notation. The algorithm was invented by Andrew Donald Booth in 1950 while doing research on crystallography at Birkbeck College in Bloomsbury, London. It proposed an efficient way of multiplying two signed binary integers in there 2's complement form such that the number of partial product is reduced which lead to the reduction of number of addition operation requred for generating the final result.
@@ -99,4 +111,32 @@ Compare post and pre synthesize, the output are same
 .. image:: /project/picture/12.jpg
     :width: 700
     
+STA
+~~~~~~~~~~~~~
 
+| sta flow
+
+.. code-block:: console
+
+    sta
+    
+    OpenSTA> read_liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+    OpenSTA> read_verilog Netlists/iiitb_r2_4bit_bm.v
+    OpenSTA> link_design iiitb_r2_4bit_bm
+    OpenSTA> read_sdc srv/iiitb_r2_4bit_bm.sdc 
+    OpenSTA> report_checks
+
+| SDC file 
+
+.. code-block:: console
+
+    create_clock -name clk -period 2.3 [get_ports {clk}]
+    set_input_delay -min 0.1 [all_inputs]
+    set_input_delay -max 0.4 [all_inputs]
+    set_output_delay -min 0.1 [all_outputs]
+    set_output_delay -max 0.4 [all_outputs]
+    set_clock_transition 0.15 [get_clocks {clk}]
+    set_clock_uncertainty 0.25 clk
+
+.. image:: /project/picture/14.jpg
+    :width: 700
