@@ -46,7 +46,7 @@ Contents
     * `Introduction to STA and importance of MOSFETs in STA/EDA`_
     * `SPICE`_
     * `CMOS Transfer Characteristic`_
-`Day13`_
+`Day13-15`_
     * `CMOS Switching Threshold and Dynamic Simulation`_
     * `CMOS inverter`_
 
