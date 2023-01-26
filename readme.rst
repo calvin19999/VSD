@@ -1031,6 +1031,14 @@ Switch
  .. image:: /picture/day10_mosfet_5.jpg
     :width: 400
     
+Velocity Saturation and basic of cmos inverter VTC
+--------------------
+
+| Velocity saturation - phenomenon in bipolar transistors where the collector current does not increase proportionally with an increase in base current, even at high collector-emitter voltages.
+| Voltage transfer characteristic (VTC)  
+* a plot of the output voltage versus the input voltage for the CMOS inverter
+* shows a sharp transition between the low and high output voltage states, which is known as the threshold voltage                                       
+
     
 Day13-15
 ~~~~~~~~~~~~~~~
