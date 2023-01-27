@@ -1222,18 +1222,18 @@ CMOS inverter
 
 single inverter
 
- .. image:: /picture/day13_cmos_3.jpg
+.. image:: /picture/day13_cmos_3.jpg
     :width: 400
 
 | variation of ideal and actual
 
- .. image:: /picture/day13_cmos_4.jpg
+.. image:: /picture/day13_cmos_4.jpg
     :width: 400
     
 | weak pmos = high resistance pmos
 | stong pmos = less resistance pmos
 
- .. image:: /picture/day13_cmos_5.jpg
+.. image:: /picture/day13_cmos_5.jpg
     :width: 400
     
     
@@ -1253,7 +1253,7 @@ Introduction to all component of open-source digital asic design
 
 | ASIC design flow
 
- .. image:: /picture/day17_introASIC_1.jpg
+.. image:: /picture/day17_introASIC_1.jpg
     :width: 400
     
 * Synthesis
@@ -1265,7 +1265,7 @@ Introduction to all component of open-source digital asic design
    * place the cell on the floorplan rows
    * global placement follow by detailed placement
    
- .. image:: /picture/day17_introASIC_2.jpg
+.. image:: /picture/day17_introASIC_2.jpg
     :width: 400
     
 * clock tree synthesis
@@ -1277,7 +1277,7 @@ Introduction to all component of open-source digital asic design
    * global routing: generate routing guides
    * detailed routing: use the routing guide to implement the actual wiring
 
- .. image:: /picture/day17_introASIC_3.jpg
+.. image:: /picture/day17_introASIC_3.jpg
     :width: 400
     
 * sign off
@@ -1289,7 +1289,7 @@ Introduction to all component of open-source digital asic design
 
 | OpenLANE ASIC Flow
 
- .. image:: /picture/day17_introASIC_4.jpg
+.. image:: /picture/day17_introASIC_4.jpg
     :width: 400
 
 
