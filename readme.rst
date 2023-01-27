@@ -950,11 +950,13 @@ Bring practicalities to clock network
     set_clock_uncertainty 0.5 my_clk                       # (skew + jitter on pre cts, jitter on post cts)
     
 create_clock -name -my_clk -period 5 [get_ports clk]
- .. image:: /picture/day8_ctm_2.jpg
+
+.. image:: /picture/day8_ctm_2.jpg
     :width: 400
     
 create_clock -name -my_clk -period 5 [get_ports clk] -wave {5 10}
- .. image:: /picture/day8_ctm_3.jpg
+
+.. image:: /picture/day8_ctm_3.jpg
     :width: 400
     
 Input delay and transition constraint
@@ -976,7 +978,7 @@ Output Constraint
     set_output_load -min 20 [get_ports OUT_Y]
     
 Generated clock
- .. image:: /picture/day8_ctm_4.jpg
+.. image:: /picture/day8_ctm_4.jpg
     :width: 400
     
 | always created with master clock
@@ -993,7 +995,7 @@ Day10-12
 Introduction to STA and importance of MOSFETs in STA/EDA
 ------------------------
 
- .. image:: /picture/day10_mosfet_1.jpg
+.. image:: /picture/day10_mosfet_1.jpg
     :width: 600
 
 .. role:: raw-html(raw)
@@ -1009,14 +1011,14 @@ SPICE
 
 | the corner file in cells folder will showing all the related value of W and L, in our design we need to follow the value in this corner file.
 
- .. image:: /picture/day10_mosfet_2.jpg
+.. image:: /picture/day10_mosfet_2.jpg
     :width: 400
     
 | At No.1 , it can be change to ss ff respective to our need
 | At No.2 , XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=5 l=2
 | Vdd = drain , n1 = gate , 0 = source , 0 = bulk
  
- .. image:: /picture/day10_mosfet_3.jpg
+.. image:: /picture/day10_mosfet_3.jpg
     :width: 400
     
 CMOS Transfer Characteristic 
@@ -1027,10 +1029,10 @@ Switch
    * off when |Vgs| < |Vt|
    * on when |Vgs| > |Vt|
    
- .. image:: /picture/day10_mosfet_4.jpg
+.. image:: /picture/day10_mosfet_4.jpg
     :width: 400
 
- .. image:: /picture/day10_mosfet_5.jpg
+.. image:: /picture/day10_mosfet_5.jpg
     :width: 400
     
 Velocity Saturation and basic of cmos inverter VTC
@@ -1043,7 +1045,7 @@ Velocity Saturation and basic of cmos inverter VTC
 
 | Electric field increase lead to saturated on velocity
 
- .. image:: /picture/day13_cmos_6.jpg
+.. image:: /picture/day13_cmos_6.jpg
     :width: 400
 
 | day2_nfet_idvds_L2_L015_W039.spice
@@ -1079,7 +1081,7 @@ Velocity Saturation and basic of cmos inverter VTC
 
    .end
 
- .. image:: /picture/day13_cmos_7.jpg
+.. image:: /picture/day13_cmos_7.jpg
     :width: 400
     
 | day2_nfet_idgs_L015_W039.spice
@@ -1115,7 +1117,7 @@ Velocity Saturation and basic of cmos inverter VTC
 
    .end
 
- .. image:: /picture/day13_cmos_8.jpg
+.. image:: /picture/day13_cmos_8.jpg
     :width: 400
 
 
@@ -1133,11 +1135,11 @@ CMOS Switching Threshold and Dynamic Simulation
 * indentify 'nodes'
 * Name the 'nodes'
 
- .. image:: /picture/day13_cmos_1.jpg
+.. image:: /picture/day13_cmos_1.jpg
     :width: 400
     
 
- .. image:: /picture/day13_cmos_2.jpg
+.. image:: /picture/day13_cmos_2.jpg
     :width: 400
     
 Example of writing spice deck
@@ -1202,10 +1204,10 @@ CMOS noise margin - the amount of noise that a CMOS circuit can tolerate before 
 
    .end
 
- .. image:: /picture/day13_cmos_9.jpg
+.. image:: /picture/day13_cmos_9.jpg
     :width: 400
     
- .. image:: /picture/day13_cmos_10.jpg
+.. image:: /picture/day13_cmos_10.jpg
     :width: 400
     
 | noise margin high = 1.69118 - 0.970313
