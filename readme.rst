@@ -1164,7 +1164,52 @@ CMOS Noise Margin
 
 CMOS noise margin - the amount of noise that a CMOS circuit can tolerate before its output changes state. It is the difference between the maximum and minimum input voltage or current levels at which the circuit can still function correctly. A higher noise margin indicates that the circuit is more tolerant of noise and is less likely to produce errors in the output.
 
+| Day4 lab
+| Y-axis - Vout
+| X-axia - Vin
+| for find noise margin will need 2 point in the graph for calculation
 
+.. code-block:: console
+
+   *Model Description
+   .param temp=27
+
+   *Including sky130 library files
+   .lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+   *Netlist Description
+
+   XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=1 l=0.15
+   XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
+
+   Cload out 0 50fF
+
+   Vdd vdd 0 1.8V
+   Vin in 0 1.8V
+
+   *simulation commands
+
+   .op
+
+   .dc Vin 0 1.8 0.01
+
+   .control
+   run
+   setplot dc1
+   display
+   .endc
+
+   .end
+
+ .. image:: /picture/day13_cmos_9.jpg
+    :width: 400
+    
+ .. image:: /picture/day13_cmos_10.jpg
+    :width: 400
+    
+| noise margin high = 1.69118 - 0.970313
+| noise margin low = 0.790625 - 0.126471
+    
 CMOS inverter
 ------------
 
