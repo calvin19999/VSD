@@ -52,7 +52,7 @@ Contents
     * `CMOS Noise Margin`_
     * `CMOS inverter`_
 `Day17`_
-   * `How To Talk To Computer`_
+   * `Introduction to all component of open-source digital asic design`_
     
 Day0 
 ~~~~~~~~
@@ -1240,7 +1240,58 @@ single inverter
 Day17
 ~~~~~~~~~~~~~~
 
-How To Talk To Computer
+Introduction to all component of open-source digital asic design
 -----------------
+
+| Implement of ASIC needed RTL, PDK and EDA tools
+| PDK (process design kit)
+* collection of file used to model a fabrication process
+* process design rules: DRC, LVS, PEX
+* device models
+* digital standard cell library
+* i/o library
+
+| ASIC design flow
+
+ .. image:: /picture/day17_introASIC_1.jpg
+    :width: 400
+    
+* Synthesis
+   * "standard cell" have regular layout
+* floor/power planning
+   * floor - partition the chip die between different system building block and place the I/O pads
+   * power - power pads, power straps, power rings 
+* placement
+   * place the cell on the floorplan rows
+   * global placement follow by detailed placement
+   
+ .. image:: /picture/day17_introASIC_2.jpg
+    :width: 400
+    
+* clock tree synthesis
+   * deliver clock to all sequential element
+   * reach minimum skew
+   * in good shape
+* routing
+   * implement the interconnect using available metal layer
+   * global routing: generate routing guides
+   * detailed routing: use the routing guide to implement the actual wiring
+
+ .. image:: /picture/day17_introASIC_3.jpg
+    :width: 400
+    
+* sign off
+   * physical verification
+      * design rules checking (DRC)
+      * layout vs schematic (LVS)
+   * timing verification
+      * static timing analysis
+
+| OpenLANE ASIC Flow
+
+ .. image:: /picture/day17_introASIC_4.jpg
+    :width: 400
+
+
 
 
