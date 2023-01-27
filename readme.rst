@@ -46,6 +46,7 @@ Contents
     * `Introduction to STA and importance of MOSFETs in STA/EDA`_
     * `SPICE`_
     * `CMOS Transfer Characteristic`_
+    * `Velocity Saturation and basic of cmos inverter VTC`_
 `Day13-15`_
     * `CMOS Switching Threshold and Dynamic Simulation`_
     * `CMOS inverter`_
@@ -1037,9 +1038,87 @@ Velocity Saturation and basic of cmos inverter VTC
 | Velocity saturation - phenomenon in bipolar transistors where the collector current does not increase proportionally with an increase in base current, even at high collector-emitter voltages.
 | Voltage transfer characteristic (VTC)  
 * a plot of the output voltage versus the input voltage for the CMOS inverter
-* shows a sharp transition between the low and high output voltage states, which is known as the threshold voltage                                       
+* shows a sharp transition between the low and high output voltage states, which is known as the threshold voltage    
 
+| Electric field increase lead to saturated on velocity
+
+ .. image:: /picture/day13_cmos_6.jpg
+    :width: 400
+
+| day2_nfet_idvds_L2_L015_W039.spice
+
+.. code-block:: console
+
+   *Model Description
+   .param temp=27
+
+   *Including sky130 library files
+   .lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+   *Netlist Description
+
+   XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
+
+   R1 n1 in 55
+
+   Vdd vdd 0 1.8V
+   Vin in 0 1.8V
+
+   *simulation commands
+
+   .op
+   .dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+
+   .control
+
+   run
+   display
+   setplot dc1
+   .endc
+
+   .end
+
+ .. image:: /picture/day13_cmos_7.jpg
+    :width: 400
     
+| day2_nfet_idgs_L015_W039.spice
+
+.. code-block:: console
+
+   *Model Description
+   .param temp=27
+
+   *Including sky130 library files
+   .lib "sky130_fd_pr/models/sky130.lib.spice" tt
+
+   *Netlist Description
+
+   XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
+
+   R1 n1 in 55
+
+   Vdd vdd 0 1.8V
+   Vin in 0 1.8V
+
+   *simulation commands
+
+   .op
+   .dc Vin 0 1.8 0.1 
+
+   .control
+
+   run
+   display
+   setplot dc1
+   .endc
+
+   .end
+
+ .. image:: /picture/day13_cmos_8.jpg
+    :width: 400
+
+
+
 Day13-15
 ~~~~~~~~~~~~~~~
     
@@ -1080,6 +1159,11 @@ Example of writing spice deck
     .LIB "tsmc_025um_model.mod" CMOS_MODELS
     .end
     
+CMOS Noise Margin
+------------------------
+
+CMOS noise margin - the amount of noise that a CMOS circuit can tolerate before its output changes state. It is the difference between the maximum and minimum input voltage or current levels at which the circuit can still function correctly. A higher noise margin indicates that the circuit is more tolerant of noise and is less likely to produce errors in the output.
+
 
 CMOS inverter
 ------------
