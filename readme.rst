@@ -1290,7 +1290,7 @@ Introduction to all component of open-source digital asic design
 | OpenLANE ASIC Flow
 
 .. image:: /picture/day17_introASIC_4.jpg
-    :width: 400
+
 
 
 
