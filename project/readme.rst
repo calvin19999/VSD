@@ -145,3 +145,34 @@ STA
 Post Synthesis STA Checks On ss,ff,tt Corner
 ~~~~~~~~~~~~~~~~~
 
+script
+
+.. code-block:: console
+    
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ff_100C_1v65.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ff_100C_1v95.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v56.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v65.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v76.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_100C_1v40.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v28.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v35.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v40.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v44.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v76.lib
+    read_liberty lib/all_lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+    read_verilog Netlists/iiitb_r2_4bit_bm.v
+    link_design iiitb_r2_4bit_bm
+    read_sdc srv/iiitb_r2_4bit_bm.sdc 
+    report_checks
+    report_wns -digit 4
+    report_worst_slack -digit 4
+    report_tns -digit 4
+    
+PVT Corner Summary at 625MHz
+
+.. image:: /project/picture/15.jpg
+    :width: 500
+
