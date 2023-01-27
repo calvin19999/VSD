@@ -49,6 +49,7 @@ Contents
     * `Velocity Saturation and basic of cmos inverter VTC`_
 `Day13-15`_
     * `CMOS Switching Threshold and Dynamic Simulation`_
+    * `CMOS Noise Margin`_
     * `CMOS inverter`_
 
     
