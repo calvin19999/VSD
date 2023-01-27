@@ -173,9 +173,9 @@ script
     
 PVT Corner Summary at 625MHz
 
-.. image:: /project/picture/15.jpg
+.. image:: /project/picture/17.jpg
     :width: 500
     
-.. image:: /project/picture/16.jpg
+.. image:: /project/picture/18.jpg
     :width: 500
 
