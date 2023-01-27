@@ -167,8 +167,8 @@ script
     link_design iiitb_r2_4bit_bm
     read_sdc srv/iiitb_r2_4bit_bm.sdc 
     report_checks
-    report_wns -digit 4
-    report_worst_slack -digit 4
+    report_worst_slack -digit 4 -max
+    report_worst_slack -digit 4 -min
     report_tns -digit 4
     
 PVT Corner Summary at 625MHz
