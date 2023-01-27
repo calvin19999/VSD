@@ -51,7 +51,8 @@ Contents
     * `CMOS Switching Threshold and Dynamic Simulation`_
     * `CMOS Noise Margin`_
     * `CMOS inverter`_
-
+`Day17`_
+   * `How To Talk To Computer`_
     
 Day0 
 ~~~~~~~~
@@ -1234,3 +1235,12 @@ single inverter
 
  .. image:: /picture/day13_cmos_5.jpg
     :width: 400
+    
+    
+Day17
+~~~~~~~~~~~~~~
+
+How To Talk To Computer
+-----------------
+
+
