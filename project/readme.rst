@@ -4,22 +4,22 @@ Radix-2 4-Bit Booth's Multiplier
 Contents
 ~~~~~~~~~~~~~
 
-`Introduction`_
-`Block Diagram & Working Principle`_
-`Pre-Synthesis`_
-`post-Synthesis`_
-`GLS`_
-`STA`_
-`Post Synthesis STA Checks On ss,ff,tt Corner`_
+* `Introduction`_
+* `Block Diagram & Working Principle`_
+* `Pre-Synthesis`_
+* `post-Synthesis`_
+* `GLS`_
+* `STA`_
+* `Post Synthesis STA Checks On ss,ff,tt Corner`_
 
 
 
 Introduction
---------------
+~~~~~~~~~~~~~~
 Booth's Multiplier is base on Booth's Multiplication algorithm. Booth's multiplication algorithm is a multiplication algorithm that multiplies two signed binary numbers in two's complement notation. The algorithm was invented by Andrew Donald Booth in 1950 while doing research on crystallography at Birkbeck College in Bloomsbury, London. It proposed an efficient way of multiplying two signed binary integers in there 2's complement form such that the number of partial product is reduced which lead to the reduction of number of addition operation requred for generating the final result.
 
 Block Diagram & Working Principle
-----------
+~~~~~~~~~~~~~~~
 
 .. image:: /project/picture/1.jpg
     :width: 500
@@ -32,7 +32,7 @@ In the above diagram, we can see that the booth's multiplier is performing itera
 The above diagram are showing the flowchart of the booth's multiplier. Firstly the all the value will be reset to 0. At every posedge clock, the value of Q0 and Q-1 are inspected for determine the operation. where both of the value of Q0 and Q-1 are same, right shift operation will be performed. when Q0 = 0 and Q-1 = 1, addition operation will performed (A=A+M). when Q0 = 1, Q-1 = 0, subtraction operation performed (A=A-M). The program will repeated as many times as the specified bits of booth's multiplier is given.
 
 Pre-Synthesis
--------------
+~~~~~~~~~~~~~~~
 
 .. code-block:: console
 
@@ -67,7 +67,7 @@ All option are tested and work perfectly.
 
     
 post-Synthesis
---------------
+~~~~~~~~~~~~~~~
 
 .. code-block:: console
 
@@ -143,5 +143,5 @@ STA
     :width: 700
     
 Post Synthesis STA Checks On ss,ff,tt Corner
-----------------------
+~~~~~~~~~~~~~~~~~
 
