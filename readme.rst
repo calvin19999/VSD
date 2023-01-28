@@ -51,8 +51,9 @@ Contents
     * `CMOS Switching Threshold and Dynamic Simulation`_
     * `CMOS Noise Margin`_
     * `CMOS inverter`_
-`Day17`_
+`Day17-18`_
    * `Introduction to all component of open-source digital asic design`_
+   * `Good Floorplan vs Bad Floorplan`_
     
 Day0 
 ~~~~~~~~
@@ -1237,7 +1238,7 @@ single inverter
     :width: 400
     
     
-Day17
+Day17-18
 ~~~~~~~~~~~~~~
 
 Introduction to all component of open-source digital asic design
@@ -1291,7 +1292,17 @@ Introduction to all component of open-source digital asic design
 
 .. image:: /picture/day17_introASIC_4.jpg
 
+Good Floorplan vs Bad Floorplan
+----------------
 
+1) Define width and height of core and die
+* core - section of the chip where the fundamental logic of the design is placed
+* die - small semiconductor material specimen on which the fundamental circuit is fabricated
+* % of utilization - the occupation of netlist/ total area of the core
+* 100% utilization which mean the core are fully occupied with netlist
+.. image:: /picture/day18_floorplan_1.jpg
 
+    :width: 400
+    
 
-
+2) Define of preplaced cells
