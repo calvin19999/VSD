@@ -54,6 +54,7 @@ Contents
 `Day17-18`_
    * `Introduction to all component of open-source digital asic design`_
    * `Good Floorplan vs Bad Floorplan`_
+   * `Placement`_
     
 Day0 
 ~~~~~~~~
@@ -1302,7 +1303,6 @@ Good Floorplan vs Bad Floorplan
 * 100% utilization which mean the core are fully occupied with netlist
 
 .. image:: /picture/day18_floorplan_1.jpg
-
     :width: 400
     
 
@@ -1322,3 +1322,12 @@ Good Floorplan vs Bad Floorplan
 
 | 6) Logic cell placement blockage
 * blockage at the side of the chip
+
+Placement
+----------------
+
+Placement the cells, optimized from the connections point of view to have minimum wire length and load capacitance. this is the stage estimate wire length and capacitance and base on that insert repeaters. 
+
+.. image:: /picture/day18_floorplan_2.jpg
+    :width: 400
+    
