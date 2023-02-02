@@ -1295,14 +1295,23 @@ Introduction to all component of open-source digital asic design
 Good Floorplan vs Bad Floorplan
 ----------------
 
-1) Define width and height of core and die
+| 1) Define width and height of core and die
 * core - section of the chip where the fundamental logic of the design is placed
 * die - small semiconductor material specimen on which the fundamental circuit is fabricated
 * % of utilization - the occupation of netlist/ total area of the core
 * 100% utilization which mean the core are fully occupied with netlist
+
 .. image:: /picture/day18_floorplan_1.jpg
 
     :width: 400
     
 
-2) Define of preplaced cells
+| 2) Define of preplaced cells
+* place in chip before automated place and route 
+
+| 3) Surround preplaced cells with dcoupling capacitors
+* adding dcouple capacitor in aprallel with the circuit
+* every time the circuit switches it draws current from Cd whereas the RL network is used to replenish the charge into dcouple capacitor
+
+| 4) Power planning
+* 
