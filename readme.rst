@@ -1314,4 +1314,11 @@ Good Floorplan vs Bad Floorplan
 * every time the circuit switches it draws current from Cd whereas the RL network is used to replenish the charge into dcouple capacitor
 
 | 4) Power planning
-* 
+* cross of Vdd and Vss, increase the efficiency of charging logic.
+* logic easier to reach the nearest power supply
+
+| 5) Pin Placement
+* the arrangement of the input/output (I/O) pins on an chip to minimize the impact on performance and power consumption.
+
+| 6) Logic cell placement blockage
+* blockage at the side of the chip
