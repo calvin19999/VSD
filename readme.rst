@@ -55,6 +55,8 @@ Contents
    * `Introduction to all component of open-source digital asic design`_
    * `Good Floorplan vs Bad Floorplan`_
    * `Placement`_
+   * `Clock Tree Synthesis`_
+   * `Routing`_
     
 Day0 
 ~~~~~~~~
@@ -1331,3 +1333,34 @@ Placement the cells, optimized from the connections point of view to have minimu
 .. image:: /picture/day18_floorplan_2.jpg
     :width: 400
     
+Clock Tree Synthesis 
+---------------
+
+| minimize the clock skew using H mathod
+
+.. image:: /picture/day18_floorplan_3.jpg
+    :width: 400
+    
+| Crosstalk will lead to more delay needed for reaching the clock, however shielding net are one of the method for solving this problem
+
+.. image:: /picture/day18_floorplan_4.jpg
+    :width: 400
+
+.. image:: /picture/day18_floorplan_5.jpg
+    :width: 400
+
+
+Routing
+-----------
+
+| best solution for connection between pin and logic gate and between logic and logic
+| Maze Routing - Lee's Algorithm
+* create a routing grid at side of chip
+* create 2 (source , target)
+* finding best solution for connecting both
+* Continueing finding by expanding from the source
+
+.. image:: /picture/day18_floorplan_6.jpg
+    :width: 400
+    
+* 
