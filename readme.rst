@@ -1363,4 +1363,15 @@ Routing
 .. image:: /picture/day18_floorplan_6.jpg
     :width: 400
     
-* 
+| There is 2 routing ( global routing and detail routing)
+| global routing
+* The goal of global routing is to find a solution that meets all design constraints and minimizes the total wirelength
+
+| Detail routing
+* the interconnects are routed layer by layer, taking into account the specific routing rules, such as the width and spacing of the metal interconnects, the location of vias, and the avoidance of critical areas such as power and ground regions.
+
+| TritonRoute EDA Tools
+* initial detail route
+* preprocess route guide
+* work on proposed MILP base panel routing scheme with intra-layer parallel and inter-layer sequential routing framework.
+| MILP (Mixed Integer Linear Programming) based panel routing is a type of routing algorithm
