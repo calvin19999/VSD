@@ -57,6 +57,7 @@ Contents
    * `Placement`_
    * `Clock Tree Synthesis`_
    * `Routing`_
+   * `Labs`_
     
 Day0 
 ~~~~~~~~
@@ -1375,3 +1376,62 @@ Routing
 * preprocess route guide
 * work on proposed MILP base panel routing scheme with intra-layer parallel and inter-layer sequential routing framework.
 | MILP (Mixed Integer Linear Programming) based panel routing is a type of routing algorithm
+
+Labs
+----------------
+
+| at openlane folder
+
+.. code-block:: console
+
+   make mount
+   
+   ./flow.tcl -interactive          # for us to know which step is doing
+   package require openlane 0.9     # input all the package
+   
+.. image:: /picture/day20_lab_1.jpg
+    :width: 400
+   
+| prepare and synthesis
+
+.. code-block:: console
+
+   prep -design picorv32a  
+   run_synthesis
+   
+.. image:: /picture/day20_lab_2.jpg
+    :width: 400
+    
+| floorplanning https://github.com/efabless/OpenLane/blob/master/configuration/README.md
+
+.. code-block:: console
+
+   run_floorplan
+   
+.. image:: /picture/day20_lab_3.jpg
+    :width: 400
+    
+ | for finding the die area, 555890/1000=555.89 micrometer , 545170/1000=545.17 micrometer 
+ 
+ .. image:: /picture/day20_lab_4.jpg
+    :width: 400
+    
+| use magic to open the def file
+
+.. code-block:: console
+
+   magic -T /home/calvin/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
+   
+| move mouse to specific cell and click s to select. "what" cmd use for check the stat of specific selected
+
+ .. image:: /picture/day20_lab_5.jpg
+    :width: 400
+
+
+
+
+
+
+
+
+
