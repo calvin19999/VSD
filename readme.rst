@@ -1446,6 +1446,15 @@ Labs
 .. image:: /picture/day20_lab_8.jpg
     :width: 400
 
+| run cts 
+
+.. code-block:: console
+
+   run_cts
+   
+.. image:: /picture/day20_lab_9.jpg
+    :width: 400
+    
 
 
 
