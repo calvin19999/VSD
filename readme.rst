@@ -1411,9 +1411,9 @@ Labs
 .. image:: /picture/day20_lab_3.jpg
     :width: 400
     
- | for finding the die area, 555890/1000=555.89 micrometer , 545170/1000=545.17 micrometer 
+| for finding the die area, 555890/1000=555.89 micrometer , 545170/1000=545.17 micrometer 
  
- .. image:: /picture/day20_lab_4.jpg
+.. image:: /picture/day20_lab_4.jpg
     :width: 400
     
 | use magic to open the def file
@@ -1424,8 +1424,56 @@ Labs
    
 | move mouse to specific cell and click s to select. "what" cmd use for check the stat of specific selected
 
- .. image:: /picture/day20_lab_5.jpg
+.. image:: /picture/day20_lab_5.jpg
     :width: 400
+
+| run placement, here will run global placement and detail placement
+
+.. code-block:: console
+
+   run_placement
+   
+.. image:: /picture/day20_lab_6.jpg
+    :width: 400
+    
+.. code-block:: console
+
+   magic -T /home/calvin/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
+
+
+.. image:: /picture/day20_lab_7.jpg
+    :width: 400
+.. image:: /picture/day20_lab_8.jpg
+    :width: 400
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
