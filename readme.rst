@@ -1455,11 +1455,21 @@ Labs
 .. image:: /picture/day20_lab_9.jpg
     :width: 400
     
+| run routing, global routing and detail routing
 
+.. code-block:: console
 
+   run_routing
+   
+.. image:: /picture/day20_lab_10.jpg
+    :width: 400
 
+.. code-block:: console
 
+   magic -T /home/calvin/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
 
+.. image:: /picture/day20_lab_11.jpg
+    :width: 400
 
 
 
