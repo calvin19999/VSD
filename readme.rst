@@ -1471,9 +1471,14 @@ Labs
 .. image:: /picture/day20_lab_11.jpg
     :width: 400
 
+| spef extraction
 
+.. code-block:: console
 
+   run_parasitics_sta
 
+.. image:: /picture/day20_lab_12.jpg
+    :width: 400
 
 
 
