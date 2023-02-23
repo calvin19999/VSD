@@ -1379,6 +1379,10 @@ Routing
 
 Labs
 ----------------
+| modified config.json
+
+.. image:: /picture/day20_lab_15.jpg
+    :width: 400
 
 | at openlane folder
 
@@ -1397,9 +1401,16 @@ Labs
 .. code-block:: console
 
    prep -design picorv32a  
+   set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+   add_lefs -src $lefs
    run_synthesis
    
 .. image:: /picture/day20_lab_2.jpg
+    :width: 400
+    
+| vsdinv is inserted
+
+.. image:: /picture/day20_lab_13.jpg
     :width: 400
     
 | floorplanning https://github.com/efabless/OpenLane/blob/master/configuration/README.md
@@ -1446,6 +1457,9 @@ Labs
 .. image:: /picture/day20_lab_8.jpg
     :width: 400
 
+.. image:: /picture/day20_lab_14.jpg
+    :width: 400
+    
 | run cts 
 
 .. code-block:: console
