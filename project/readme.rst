@@ -329,11 +329,56 @@ Routing
 Post placement pre CTS STA checks for your design on ss,ff,tt corners
 ----------
 
+.. code-block:: console
+
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_100C_1v65.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_100C_1v95.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v56.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v65.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v76.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_100C_1v40.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v28.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v35.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v40.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v44.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v76.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+   read_verilog Netlists/iiitb_r2_4bit_bm.v
+   link_design iiitb_r2_4bit_bm
+   read_sdc srv/iiitb_r2_4bit_bm.sdc
+   report_checks
+   report_worst_slack -digit 4 -max
+   report_worst_slack -digit 4 -min
+   report_tns -digit 4
+
 Post layout STA checks for your design on ss,ff,tt corners
 ------------
 
+.. code-block:: console
 
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_100C_1v65.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_100C_1v95.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v56.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v65.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ff_n40C_1v76.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_100C_1v40.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v28.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v35.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v40.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v44.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v76.lib
+   read_liberty lib/all_lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
+   read_verilog Netlists/iiitb_r2_4bit_bm.v
+   link_design iiitb_r2_4bit_bm
+   read_sdc srv/iiitb_r2_4bit_bm.sdc
+   report_checks
+   report_worst_slack -digit 4 -max
+   report_worst_slack -digit 4 -min
+   report_tns -digit 4
 
 
 
