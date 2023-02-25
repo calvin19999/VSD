@@ -345,7 +345,7 @@ Post placement pre CTS STA checks for your design on ss,ff,tt corners
    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v76.lib
    read_liberty lib/all_lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-   read_verilog Netlists/iiitb_r2_4bit_bm.v
+   read_verilog placement/iiitb_r2_4bit_bm.nl.v
    link_design iiitb_r2_4bit_bm
    read_sdc srv/iiitb_r2_4bit_bm.sdc
    report_checks
@@ -376,7 +376,7 @@ Post layout STA checks for your design on ss,ff,tt corners
    read_liberty lib/all_lib/sky130_fd_sc_hd__ss_n40C_1v76.lib
    read_liberty lib/all_lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-   read_verilog Netlists/iiitb_r2_4bit_bm.v
+   read_verilog routing/iiitb_r2_4bit_bm.nl.v
    link_design iiitb_r2_4bit_bm
    read_sdc srv/iiitb_r2_4bit_bm.sdc
    report_checks
