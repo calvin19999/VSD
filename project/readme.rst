@@ -353,6 +353,10 @@ Post placement pre CTS STA checks for your design on ss,ff,tt corners
    report_worst_slack -digit 4 -min
    report_tns -digit 4
 
+.. image:: /project/picture/35.jpg
+    
+.. image:: /project/picture/36.jpg
+    
 Post layout STA checks for your design on ss,ff,tt corners
 ------------
 
@@ -381,7 +385,9 @@ Post layout STA checks for your design on ss,ff,tt corners
    report_tns -digit 4
 
 
-
+.. image:: /project/picture/37.jpg
+    
+.. image:: /project/picture/38.jpg
 
 
 
